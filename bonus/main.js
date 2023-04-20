@@ -6,7 +6,7 @@ createApp({
             todoList: [],
             newTask: {
                 item: '',
-                done: false,
+                done: 'true',
             }
         }
     },
@@ -38,10 +38,14 @@ createApp({
                         headers: { 'Content-Type': 'multipart/form-data' }
                     }
                 ).then(response => {
+
                     this.todoList = response.data;
-                    this.newTask = '';
+                    this.newTask.item = '';
                 });
             }
+        },
+        markTask() {
+
         }
     },
     mounted() {

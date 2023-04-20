@@ -50,3 +50,7 @@
     padding: 0 25px;
     height: 30px;
 }
+
+.done {
+    text-decoration: line-through;
+}

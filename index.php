@@ -8,7 +8,16 @@
 </head>
 <body>
     
-    <div id="app">{{ message }}</div>
+    <div id="app">
+        
+    
+    
+        <div v-for="todo in todoList">{{ todo }}</div>
+
+
+
+
+    </div>
 
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

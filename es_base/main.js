@@ -4,10 +4,7 @@ createApp({
     data() {
         return {
             todoList: [],
-            newTask: {
-                item: '',
-                done: 'false',
-            }
+            newTask: ''
         }
     },
     methods: {
@@ -26,7 +23,7 @@ createApp({
         //su index.php che tramite v-model lo inserisce nella proprieta
         //new task di main.js data
         addTask() {
-            if (this.newTask.item != '') {
+            if (this.newTask != '') {
                 // console.log(this.newTask);
 
                 const data = {
@@ -38,15 +35,10 @@ createApp({
                         headers: { 'Content-Type': 'multipart/form-data' }
                     }
                 ).then(response => {
-
-                    this.todoList.push(response.data[response.data.length - 1]);
-                    this.newTask.item = '';
+                    this.todoList = response.data;
+                    this.newTask = '';
                 });
             }
-        },
-        markTask() {
-            this.todoList.done = 'false';
-            console.log(this.todoList.done);
         }
     },
     mounted() {

@@ -1,10 +1,22 @@
 <?php
 //creo hardcode lista di valori
 $todoList = [
-    'fai la spesa',
-    'allenati',
-    'chiama la mamma',
-    'compra regalo per Sara',
+    [
+        'item' => 'fai la spesa',
+        'done' => 'true'
+    ],
+    [
+        'item' => 'allenati',
+        'done' => 'false'
+    ],
+    [
+        'item' => 'chiama la mamma',
+        'done' => 'false'
+    ],
+    [
+        'item' => 'compra regalo per Sara',
+        'done' => 'false'
+    ],
     
    
 ];

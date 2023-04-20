@@ -17,11 +17,11 @@
             <h1>Lista del Frontendista</h1>
             <!-- ciclo l'array todoList con vue e ne stampo ogni element -->
             <ul>
-                <li @click="todo.done = 'true'" :class="todo.done === 'true'?'done':''" v-for="todo in todoList">{{ todo.item }}</li>
+                <li v-for="todo in todoList">{{ todo }}</li>
             </ul>
 
             <div class="my-form">
-                <input type="text" v-model="newTask.item" @keyup.enter="addTask()">
+                <input type="text" v-model="newTask" @keyup.enter="addTask()">
                 <button type="button" @click="addTask()">Aggiungi alla lista</button>
             </div>
         </div>

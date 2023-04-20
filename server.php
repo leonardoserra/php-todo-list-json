@@ -9,7 +9,6 @@ $todoList = [
 
 //comunico al browser che tipo di intestazione riceverà al campo
 //Content-Type e setto application/json
-
 header('Content-Type: application/json');
 
 //in output mando il contenuto della variabile $todoList codificandolo

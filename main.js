@@ -23,18 +23,22 @@ createApp({
         //su index.php che tramite v-model lo inserisce nella proprieta
         //new task di main.js data
         addTask() {
-            const data = {
-                item: this.newTask,
-            }
+            if (this.newTask != '') {
+                console.log(this.newTask);
 
-            axios.post('server.php', data,
-                {
-                    headers: { 'Content-Type': 'multipart/form-data' }
+                const data = {
+                    item: this.newTask,
                 }
-            ).then(response => {
-                this.todoList = response.data;
-                this.newTask = '';
-            });
+
+                axios.post('server.php', data,
+                    {
+                        headers: { 'Content-Type': 'multipart/form-data' }
+                    }
+                ).then(response => {
+                    this.todoList = response.data;
+                    this.newTask = '';
+                });
+            }
         }
     },
     mounted() {

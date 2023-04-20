@@ -4,7 +4,10 @@ createApp({
     data() {
         return {
             todoList: [],
-            newTask: ''
+            newTask: {
+                item: '',
+                done: false,
+            }
         }
     },
     methods: {
@@ -23,7 +26,7 @@ createApp({
         //su index.php che tramite v-model lo inserisce nella proprieta
         //new task di main.js data
         addTask() {
-            if (this.newTask != '') {
+            if (this.newTask.item != '') {
                 // console.log(this.newTask);
 
                 const data = {

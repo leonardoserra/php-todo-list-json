@@ -6,7 +6,7 @@ createApp({
             todoList: [],
             newTask: {
                 item: '',
-                done: 'true',
+                done: 'false',
             }
         }
     },
@@ -39,13 +39,14 @@ createApp({
                     }
                 ).then(response => {
 
-                    this.todoList = response.data;
+                    this.todoList.push(response.data[response.data.length - 1]);
                     this.newTask.item = '';
                 });
             }
         },
         markTask() {
-
+            this.todoList.done = 'false';
+            console.log(this.todoList.done);
         }
     },
     mounted() {

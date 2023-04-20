@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.container {
+    max-width: 1000px;
+
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+.wrapper {
+    margin-top: 200px;
+    font-size: 25px;
+    color: aliceblue;
+    font-family: monospace;
+    padding: 50px;
+    border-radius: 25px;
+    background-color: rgb(65, 69, 252);
+
+}
+
+.wrapper h1 {
+    padding-bottom: 50px;
+}
+
+.wrapper ul {
+    margin-left: 25px;
+}
+
+.wrapper .my-form {
+    margin-top: 50px;
+}
+
+.my-form button {
+    margin-left: 25px;
+    font-family: monospace;
+    background-color: aqua;
+    color: black;
+}
+
+.my-form button,
+.my-form input {
+    padding: 0 25px;
+    height: 30px;
+}

@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>TODO List</title>
 </head>
 <body>
     
     <div id="app">
         
-    
-        <!-- ciclo l'array todoList con vue e ne stampo ogni element -->
-        <div v-for="todo in todoList">{{ todo }}</div>
+    <div class="container">
 
-        <input type="text" v-model="newTask">
-        <button type="button" @click="addTask()">Aggiungi alla lista</button>
+        <div class="wrapper">
+            <h1>Lista del Frontendista</h1>
+            <!-- ciclo l'array todoList con vue e ne stampo ogni element -->
+            <ul>
+                <li v-for="todo in todoList">{{ todo }}</li>
+            </ul>
+
+            <div class="my-form">
+                <input type="text" v-model="newTask" @keyup.enter="addTask()">
+                <button type="button" @click="addTask()">Aggiungi alla lista</button>
+            </div>
+        </div>
+
+    </div>
 
 
 

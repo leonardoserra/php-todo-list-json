@@ -38,6 +38,7 @@ createApp({
         }
     },
     mounted() {
+        //invoco al mounted la funzione che prende i dati dal server
         this.getList();
     }
 

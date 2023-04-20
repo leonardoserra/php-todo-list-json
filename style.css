@@ -34,6 +34,11 @@
     margin-left: 25px;
 }
 
+.wrapper ul li {
+    display: flex;
+    justify-content: space-between;
+}
+
 .wrapper .my-form {
     margin-top: 50px;
 }

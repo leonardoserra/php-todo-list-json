@@ -11,8 +11,11 @@
     <div id="app">
         
     
-    
+        <!-- ciclo l'array todoList con vue e ne stampo ogni element -->
         <div v-for="todo in todoList">{{ todo }}</div>
+
+        <input type="text" v-model="newTask">
+        <button type="button" @click="addTask()">Aggiungi alla lista</button>
 
 
 

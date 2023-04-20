@@ -7,6 +7,9 @@ $todoList = [
     'compra regalo per Sara'
 ];
 
+if(isset($_POST['item'])){
+    $todoList[] = $_POST['item'];
+}
 //comunico al browser che tipo di intestazione riceverà al campo
 //Content-Type e setto application/json
 header('Content-Type: application/json');

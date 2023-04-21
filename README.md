@@ -34,4 +34,4 @@
 > - Abilitare l’eliminazione di un task
 
 
-![screenshot finale]screenshot.png
+![screenshot finale](screenshot.png)

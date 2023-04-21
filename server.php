@@ -3,26 +3,30 @@
 $todoList = [
     [
         'item' => 'fai la spesa',
-        'done' => 'true'
+        'done' => true
     ],
     [
         'item' => 'allenati',
-        'done' => 'false'
+        'done' => false
     ],
     [
         'item' => 'chiama la mamma',
-        'done' => 'false'
+        'done' => false
     ],
     [
         'item' => 'compra regalo per Sara',
-        'done' => 'false'
+        'done' => false
     ],
     
    
 ];
 
 if(isset($_POST['item'])){
-    $todoList[] = $_POST['item'];
+    $todoList[] = [
+        'item' => $_POST['item']['item'],
+        'done' => $_POST['item']['done'] === 'false'?false:true,
+
+    ];
 }
 
 //comunico al browser che tipo di intestazione riceverà al campo

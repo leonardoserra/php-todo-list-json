@@ -6,7 +6,7 @@ createApp({
             todoList: [],
             newTask: {
                 item: '',
-                done: 'false',
+                done: false,
             }
         }
     },
@@ -32,12 +32,14 @@ createApp({
                 const data = {
                     item: this.newTask,
                 }
+                // console.log(this.newTask);
 
                 axios.post('server.php', data,
                     {
                         headers: { 'Content-Type': 'multipart/form-data' }
                     }
                 ).then(response => {
+                    console.log(this.newTask);
 
                     this.todoList.push(response.data[response.data.length - 1]);
                     this.newTask.item = '';

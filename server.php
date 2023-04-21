@@ -1,32 +1,25 @@
 <?php
 //creo hardcode lista di valori
-$todoList = [
-    [
-        'item' => 'fai la spesa',
-        'done' => true
-    ],
-    [
-        'item' => 'allenati',
-        'done' => false
-    ],
-    [
-        'item' => 'chiama la mamma',
-        'done' => false
-    ],
-    [
-        'item' => 'compra regalo per Sara',
-        'done' => false
-    ],
-    
-   
-];
 
+if(file_exists('./database.json')){
+    $string = file_get_contents('database.json');
+    $todoList = json_decode($string, true);
+}else{
+    $todoList = [];
+}
+
+//controllo se in $_POST['item'] ce un valore
 if(isset($_POST['item'])){
+    //pusho dentro l'array i valori arrivati con POST axios
     $todoList[] = [
-        'item' => $_POST['item']['item'],
-        'done' => $_POST['item']['done'] === 'false'?false:true,
-
+        'item' => $_POST['item'],
+        'done' => false,
     ];
+
+    $myString = json_encode($todoList);
+    file_put_contents('database.json', $myString);
+
+
 }
 
 //comunico al browser che tipo di intestazione riceverà al campo

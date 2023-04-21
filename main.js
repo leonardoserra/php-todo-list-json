@@ -4,10 +4,7 @@ createApp({
     data() {
         return {
             todoList: [],
-            newTask: {
-                item: '',
-                done: false,
-            }
+            newTask: ''
         }
     },
     methods: {
@@ -41,8 +38,8 @@ createApp({
                 ).then(response => {
                     console.log(this.newTask);
 
-                    this.todoList.push(response.data[response.data.length - 1]);
-                    this.newTask.item = '';
+                    this.todoList = response.data;
+                    this.newTask = '';
                 });
             }
         },

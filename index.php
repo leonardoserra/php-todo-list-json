@@ -24,7 +24,7 @@
             </ul>
 
             <div class="my-form">
-                <input type="text" v-model="newTask.item" @keyup.enter="addTask()">
+                <input type="text" v-model="newTask" @keyup.enter="addTask()">
                 <button type="button" @click="addTask()">Aggiungi alla lista</button>
             </div>
         </div>

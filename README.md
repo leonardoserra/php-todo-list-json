@@ -16,7 +16,7 @@
 > - Mostrare lo stato del task → se completato, barrare il testo  
 
 
-* **SECONDA PARTE**  
+# **SECONDA PARTE**  
 
 * ***Descrizione***  
 > - Dobbiamo creare una web-app che permetta di leggere e scrivere una lista di Todo.  

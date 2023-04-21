@@ -7,6 +7,7 @@ createApp({
             newTask: ''
         }
     },
+
     methods: {
         //funzione che chiama in GET i valori del server 
         //e li aggiunge all array todoList

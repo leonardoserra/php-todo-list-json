@@ -32,3 +32,6 @@
 > - Permettere di segnare un task come completato facendo click sul testo  
 > - Permettere il toggle del task (completato/non completato)  
 > - Abilitare l’eliminazione di un task
+
+
+![screenshot finale]screenshot.png

@@ -12,37 +12,38 @@ if(file_exists('./database.json')){
     $todoList = [];
 }
 
-addTask();
-//controllo se in $_POST['item'] ce un valore
-function addTask(){
+// doThat();
 
-    if(isset($_POST['item']['item'])){
-        markTask();
-        //pusho dentro l'array i valori arrivati con POST axios
-        $todoList[] = [
-            'item' => $_POST['item']['item'],
-            'done' => $_POST['item']['done'] === 'false'?false:true,
-        ];
-    
-        $myString = json_encode($todoList);
-        file_put_contents('database.json', $myString);
-    }
-}
-
-//controllo se è arrivata una chiamata $_POST['done']
-function markTask(){
-} if(isset($_POST['done'])){
-
-    $todoList = $_POST['done'];
-
+if(isset($_POST['item']['item'])){
+    //pusho dentro l'array i valori arrivati con POST axios
     $todoList[] = [
-        'item' => $_POST['done']['item'],
-        'done' => $_POST['done']['done'] === 'false'?true:false,
+        'item' => $_POST['item']['item'],
+        'done' => $_POST['item']['done'] === 'false'?false:true,
     ];
     $myString = json_encode($todoList);
     file_put_contents('database.json', $myString);
 
 }
+
+// function doThat(){
+    //controllo se in $_POST['item'] ce un valore
+    // if(isset($_POST['item']['item'])){
+    //     //pusho dentro l'array i valori arrivati con POST axios
+    //     $todoList[] = [
+    //         'item' => $_POST['item']['item'],
+    //         'done' => $_POST['done']['done'] === 'false'?false:true,
+    //     ];
+    // }
+    // else if(isset($_POST['done'])){
+    //     $todoList[] = [
+    //         'item' => $_POST['item']['item'],
+    //         'done' => $_POST['done']['done'] === 'false'?true:false,
+    //     ];
+    // }
+// }
+//controllo se è arrivata una chiamata $_POST['done']
+
+    
     
 
 

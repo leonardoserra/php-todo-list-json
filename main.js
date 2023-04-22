@@ -41,7 +41,7 @@ createApp({
                         headers: { 'Content-Type': 'multipart/form-data' }
                     }
                 ).then(response => {
-                    console.log(this.newTask);
+                    // console.log(this.newTask);
 
                     this.todoList = response.data;
                     this.newTask = {
@@ -56,10 +56,11 @@ createApp({
             // this.todoList.done = 'false';
             // console.log(this.todoList.done);
             //non funziona da sistemare
-            this.todoList[index].done = !this.todoList[index].done;
+            // this.todoList[index].done = !this.todoList[index].done;
 
             const data = {
                 done: this.newTask,
+
             }
             // console.log(this.newTask);
 
@@ -68,9 +69,10 @@ createApp({
                     headers: { 'Content-Type': 'multipart/form-data' }
                 }
             ).then(response => {
-                console.log(this.newTask);
+                // console.log(this.todoList);
                 this.todoList = response.data;
             });
+
         }
     },
     mounted() {

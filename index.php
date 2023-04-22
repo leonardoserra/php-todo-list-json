@@ -18,7 +18,7 @@
             <!-- ciclo l'array todoList con vue e ne stampo ogni element -->
             <ul>
                 <li v-for="(todo,index) in todoList">
-                    <span @click="markTask(index)" :class="todo.done === true?'done':''">{{ todo.item }}</span>
+                    <span @click="todo.done = !todo.done" :class="todo.done === true?'done':''">{{ todo.item }}</span>
                     <!-- <span @click="todo.done = false">&nbsp;Undo</span> -->
                 </li>
             </ul>

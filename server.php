@@ -13,11 +13,11 @@ if(file_exists('./database.json')){
 }
 
 //controllo se in $_POST['item'] ce un valore
-if(isset($_POST['item'])){
+if(isset($_POST['item']['item'])){
     //pusho dentro l'array i valori arrivati con POST axios
     $todoList[] = [
-        'item' => $_POST['item'],
-        'done' => false,
+        'item' => $_POST['item']['item'],
+        'done' => $_POST['item']['done'] === 'false'?false:true,
     ];
 
     $myString = json_encode($todoList);
@@ -25,18 +25,13 @@ if(isset($_POST['item'])){
 }
 
 //controllo se è arrivata una chiamata $_POST['done']
-if(isset($_POST['done'])){
+// if(isset($_POST['done'])){
 
    
-    
-    $todoList[] = [
-        'item' => $_POST['done'],
-        'done' => $_POST['done'] === true?false:true,
-    ];
-    $myString = json_encode($todoList);
-    file_put_contents('database.json', $myString);
+//     $myString = json_encode($todoList);
+//     file_put_contents('database.json', $myString);
 
-}
+// }
 
 
 //comunico al browser che tipo di intestazione riceverà al campo

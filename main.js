@@ -4,7 +4,11 @@ createApp({
     data() {
         return {
             todoList: [],
-            newTask: ''
+            newTask: {
+                'item': '',
+                'done': false,
+            }
+
         }
     },
 
@@ -24,7 +28,7 @@ createApp({
         //su index.php che tramite v-model lo inserisce nella proprieta
         //new task di main.js data
         addTask() {
-            if (this.newTask != '') {
+            if (this.newTask.item != '') {
                 // console.log(this.newTask);
 
                 const data = {
@@ -40,7 +44,7 @@ createApp({
                     console.log(this.newTask);
 
                     this.todoList = response.data;
-                    this.newTask = '';
+                    this.newTask = {};
                 });
             }
         },
@@ -62,7 +66,7 @@ createApp({
                 console.log(this.newTask);
 
                 this.todoList = response.data;
-                this.newTask = '';
+                this.newTask.item = '';
             });
         }
     },

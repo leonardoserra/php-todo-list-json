@@ -52,14 +52,17 @@ createApp({
             const data = {
                 done: this.newTask,
             }
+            // console.log(this.newTask);
+
             axios.post('server.php', data,
                 {
                     headers: { 'Content-Type': 'multipart/form-data' }
                 }
             ).then(response => {
-                // this.newTask.done = !this.newTask.done;
-                console.log(this.newTask.item);
+                console.log(this.newTask);
+
                 this.todoList = response.data;
+                this.newTask = '';
             });
         }
     },
@@ -67,5 +70,6 @@ createApp({
         //invoco al mounted la funzione che prende i dati dal server
         this.getList();
     }
+
 
 }).mount('#app')

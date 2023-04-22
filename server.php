@@ -1,5 +1,9 @@
 <?php
-//creo hardcode lista di valori
+//verifico se esiste un database json, se presente salvo la
+//stringa nel file json in una var $string e la decodifico
+//in array associativo per php assegnandola poi a $todoList
+
+//se non esiste un file database.json creo un array vuoto $todoList
 
 if(file_exists('./database.json')){
     $string = file_get_contents('database.json');
@@ -21,18 +25,18 @@ if(isset($_POST['item'])){
 }
 
 //controllo se è arrivata una chiamata $_POST['done']
-// if(isset($_POST['done'])){
+if(isset($_POST['done'])){
 
    
-//     //
-//     $todoList[] = [
-//         'item' => $_POST['done'],
-//         'done' => $_POST['done'],
-//     ];
-//     $myString = json_encode($todoList);
-//     file_put_contents('database.json', $myString);
+    
+    $todoList[] = [
+        'item' => $_POST['done'],
+        'done' => $_POST['done'] === true?false:true,
+    ];
+    $myString = json_encode($todoList);
+    file_put_contents('database.json', $myString);
 
-// }
+}
 
 
 //comunico al browser che tipo di intestazione riceverà al campo

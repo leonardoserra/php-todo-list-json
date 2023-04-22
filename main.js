@@ -44,15 +44,20 @@ createApp({
                     console.log(this.newTask);
 
                     this.todoList = response.data;
-                    this.newTask = {};
+                    this.newTask = {
+                        'item': '',
+                        'done': false,
+                    };
                 });
             }
         },
 
-        markTask() {
+        markTask(index) {
             // this.todoList.done = 'false';
             // console.log(this.todoList.done);
             //non funziona da sistemare
+            this.todoList[index].done = !this.todoList[index].done;
+
             const data = {
                 done: this.newTask,
             }
@@ -64,9 +69,7 @@ createApp({
                 }
             ).then(response => {
                 console.log(this.newTask);
-
                 this.todoList = response.data;
-                this.newTask.item = '';
             });
         }
     },

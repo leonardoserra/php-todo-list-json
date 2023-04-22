@@ -17,8 +17,8 @@
             <h1>Lista del Frontendista</h1>
             <!-- ciclo l'array todoList con vue e ne stampo ogni element -->
             <ul>
-                <li v-for="todo in todoList">
-                    <span @click="markTask()" :class="todo.done === true?'done':''">{{ todo.item }}</span>
+                <li v-for="(todo,index) in todoList">
+                    <span @click="markTask(index)" :class="todo.done === true?'done':''">{{ todo.item }}</span>
                     <!-- <span @click="todo.done = false">&nbsp;Undo</span> -->
                 </li>
             </ul>

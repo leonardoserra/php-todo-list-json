@@ -12,26 +12,38 @@ if(file_exists('./database.json')){
     $todoList = [];
 }
 
+addTask();
 //controllo se in $_POST['item'] ce un valore
-if(isset($_POST['item']['item'])){
-    //pusho dentro l'array i valori arrivati con POST axios
-    $todoList[] = [
-        'item' => $_POST['item']['item'],
-        'done' => $_POST['item']['done'] === 'false'?false:true,
-    ];
+function addTask(){
 
-    $myString = json_encode($todoList);
-    file_put_contents('database.json', $myString);
+    if(isset($_POST['item']['item'])){
+        markTask();
+        //pusho dentro l'array i valori arrivati con POST axios
+        $todoList[] = [
+            'item' => $_POST['item']['item'],
+            'done' => $_POST['item']['done'] === 'false'?false:true,
+        ];
+    
+        $myString = json_encode($todoList);
+        file_put_contents('database.json', $myString);
+    }
 }
 
 //controllo se è arrivata una chiamata $_POST['done']
-// if(isset($_POST['done'])){
+function markTask(){
+} if(isset($_POST['done'])){
 
-   
-//     $myString = json_encode($todoList);
-//     file_put_contents('database.json', $myString);
+    $todoList = $_POST['done'];
 
-// }
+    $todoList[] = [
+        'item' => $_POST['done']['item'],
+        'done' => $_POST['done']['done'] === 'false'?true:false,
+    ];
+    $myString = json_encode($todoList);
+    file_put_contents('database.json', $myString);
+
+}
+    
 
 
 //comunico al browser che tipo di intestazione riceverà al campo

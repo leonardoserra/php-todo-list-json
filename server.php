@@ -23,7 +23,7 @@ if(isset($_POST['item']['item'])){
     $myString = json_encode($todoList);
     file_put_contents('database.json', $myString);
 
-}else if(isset($_POST['done'])){
+}else  if(isset($_POST['done'])){
     //pusho dentro l'array i valori arrivati con POST axios
     $index = $_POST['done'];
     $todoList[$index]['done'] = !$todoList[$index]['done'];

@@ -52,27 +52,27 @@ createApp({
             }
         },
 
-        // setDone(index) {
-        //     console.log(index);
-        //con questa funzione passo al back end l'index in modo da
-        //poter lavorare e modificare esattamente i dati dell'elemento corrente
-        // const data = {
-        //     done: index,
-        // }
-        // console.log(this.newTask);
+        setDone(index) {
+            // console.log(index);
+            // con questa funzione passo al back end l'index in modo da
+            // poter lavorare e modificare esattamente i dati dell'elemento corrente
+            const data = {
+                done: index
+            }
+            // console.log(this.newTask);
 
-        // axios.post('server.php', data,
-        //     {
-        //         headers: { 'Content-Type': 'multipart/form-data' }
-        //     }
-        // ).then(response => {
-        //     // console.log(this.newTask);
+            axios.post('server.php', data,
+                {
+                    headers: { 'Content-Type': 'multipart/form-data' }
+                }
+            ).then(response => {
+                // console.log(this.newTask);
 
-        //     this.todoList = response.data;
+                this.todoList = response.data;
 
-        // });
+            });
 
-        // }
+        }
     },
     mounted() {
         //invoco al mounted la funzione che prende i dati dal server

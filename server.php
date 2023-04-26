@@ -23,24 +23,16 @@ if(isset($_POST['item']['item'])){
     $myString = json_encode($todoList);
     file_put_contents('database.json', $myString);
 
+}else if(isset($_POST['done'])){
+    //pusho dentro l'array i valori arrivati con POST axios
+    $index = $_POST['done'];
+    $todoList[$index]['done'] = !$todoList[$index]['done'];
+
+    $myString = json_encode($todoList);
+    file_put_contents('database.json', $myString);
 }
 
-// function doThat(){
-    //controllo se in $_POST['item'] ce un valore
-    // if(isset($_POST['item']['item'])){
-    //     //pusho dentro l'array i valori arrivati con POST axios
-    //     $todoList[] = [
-    //         'item' => $_POST['item']['item'],
-    //         'done' => $_POST['done']['done'] === 'false'?false:true,
-    //     ];
-    // }
-    // else if(isset($_POST['done'])){
-    //     $todoList[] = [
-    //         'item' => $_POST['item']['item'],
-    //         'done' => $_POST['done']['done'] === 'false'?true:false,
-    //     ];
-    // }
-// }
+
 //controllo se è arrivata una chiamata $_POST['done']
 
     

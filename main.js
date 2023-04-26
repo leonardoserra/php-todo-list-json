@@ -52,15 +52,12 @@ createApp({
             }
         },
 
-        markTask(index) {
-            // this.todoList.done = 'false';
-            // console.log(this.todoList.done);
-            //non funziona da sistemare
-            // this.todoList[index].done = !this.todoList[index].done;
+        setDone(index) {
 
+            //con questa funzione passo al back end l'index in modo da
+            //poter lavorare e modificare esattamente i dati dell'elemento corrente
             const data = {
-                done: this.newTask,
-
+                done: index
             }
             // console.log(this.newTask);
 
@@ -69,8 +66,10 @@ createApp({
                     headers: { 'Content-Type': 'multipart/form-data' }
                 }
             ).then(response => {
-                // console.log(this.todoList);
+                // console.log(this.newTask);
+
                 this.todoList = response.data;
+
             });
 
         }
